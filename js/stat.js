@@ -29,17 +29,14 @@ var getMaxElement = function(arr) {
 };
 
 window.renderStatistics = function(ctx, players, times) {
-  var positionStartX = 100;
-  var positionStartY = 10;
-
   renderCloud(ctx, 110, 20, "rgba(0, 0, 0, 0.7)");
   renderCloud(ctx, 100, 10, "#fff");
 
   //text
   ctx.fillStyle = "#000000";
   ctx.font = "16px PT Mono";
-  ctx.fillText("Ура вы победили!", positionStartX + 20, positionStartY + 30);
-  ctx.fillText("Список результатов:", positionStartX + 20, positionStartY + 50);
+  ctx.fillText("Ура вы победили!", CLOUD_X + 20, CLOUD_Y + 30);
+  ctx.fillText("Список результатов:", CLOUD_X + 20, CLOUD_Y + 50);
 
   var maxTime = getMaxElement(times);
 
