@@ -1,14 +1,6 @@
 "use strict";
 
 (function() {
-  var setup = document.querySelector(".setup");
-
-  var setupSimilar = setup
-    .querySelector(".setup-similar")
-    .classList.remove("hidden");
-
-  var setupSimilarList = setup.querySelector(".setup-similar-list");
-
   var namePerson = [
     "Иван",
     "Хуан Себастьян",
@@ -42,46 +34,42 @@
 
   var eyesColor = ["black", "red", "blue", "yellow", "green"];
 
-  var randomName = function(name) {
-    return namePerson[Math.floor(Math.random() * namePerson.length)];
-  };
-
-  var randomFamily = function(family) {
-    return familyPerson[Math.floor(Math.random() * familyPerson.length)];
-  };
-
-  var randomCoatColor = function(coat) {
-    return coatColor[Math.floor(Math.random() * coatColor.length)];
-  };
-
-  var randomEyesColor = function(eyes) {
-    return eyesColor[Math.floor(Math.random() * eyesColor.length)];
-  };
-
-  var men;
+  var wizards;
 
   window.wizards = [
     {
-      name: randomName(namePerson) + " " + randomFamily(familyPerson),
-      coatColor: randomCoatColor(coatColor),
-      eyesColor: randomEyesColor(eyesColor)
+      name:
+        window.random.getRandom(namePerson) +
+        " " +
+        window.random.getRandom(familyPerson),
+      coatColor: window.random.getRandom(coatColor),
+      eyesColor: window.random.getRandom(eyesColor)
     },
     {
-      name: randomName(namePerson) + " " + randomFamily(familyPerson),
-      coatColor: randomCoatColor(coatColor),
-      eyesColor: randomEyesColor(eyesColor)
+      name:
+        window.random.getRandom(namePerson) +
+        " " +
+        window.random.getRandom(familyPerson),
+      coatColor: window.random.getRandom(coatColor),
+      eyesColor: window.random.getRandom(eyesColor)
     },
     {
-      name: randomName(namePerson) + " " + randomFamily(familyPerson),
-      coatColor: randomCoatColor(coatColor),
+      name:
+        window.random.getRandom(namePerson) +
+        " " +
+        window.random.getRandom(familyPerson),
+      coatColor: window.random.getRandom(coatColor),
 
-      eyesColor: randomEyesColor(eyesColor)
+      eyesColor: window.random.getRandom(eyesColor)
     },
     {
-      name: randomName(namePerson) + " " + randomFamily(familyPerson),
-      coatColor: randomCoatColor(coatColor),
+      name:
+        window.random.getRandom(namePerson) +
+        " " +
+        window.random.getRandom(familyPerson),
+      coatColor: window.random.getRandom(coatColor),
 
-      eyesColor: randomEyesColor(eyesColor)
+      eyesColor: window.random.getRandom(eyesColor)
     }
   ];
 })();
