@@ -1,6 +1,6 @@
 "use strict";
 
-(function() {
+(function () {
   var namePerson = [
     "Иван",
     "Хуан Себастьян",

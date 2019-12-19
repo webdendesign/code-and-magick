@@ -1,11 +1,11 @@
 "use strict";
 
-(function() {
+(function () {
   var setup = document.querySelector(".setup");
 
-  var setupSimilar = setup
-    .querySelector(".setup-similar")
-    .classList.remove("hidden");
+  var setupSimilar = setup.querySelector(".setup-similar");
+
+  setupSimilar.classList.remove("hidden");
 
   var setupSimilarList = setup.querySelector(".setup-similar-list");
 
@@ -13,7 +13,7 @@
     .querySelector("#similar-wizard-template")
     .content.querySelector(".setup-similar-item");
 
-  var renderWizard = function(wizard) {
+  var renderWizard = function (wizard) {
     var wizardElement = template.cloneNode(true);
 
     wizardElement.querySelector(".setup-similar-label").textContent =

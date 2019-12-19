@@ -1,6 +1,6 @@
 "use strict";
 
-(function() {
+(function () {
   var setup = document.querySelector(".setup");
 
   var coatColor = [
@@ -27,14 +27,14 @@
   var input = setupWizardAppearance.querySelectorAll("input");
 
   var wizardCoat = setupWizard.querySelector(".wizard-coat");
-  wizardCoat.addEventListener("click", function() {
+  wizardCoat.addEventListener("click", function () {
     wizardCoat.style.fill = window.random.getRandom(coatColor);
   });
 
   //Изменение цвета глаз персонажа по нажатию
 
   var wizardEyes = setupWizard.querySelector(".wizard-eyes");
-  wizardEyes.addEventListener("click", function() {
+  wizardEyes.addEventListener("click", function () {
     wizardEyes.style.fill = window.random.getRandom(eyesColor);
   });
 
@@ -42,10 +42,8 @@
 
   var setupFireballWrap = setup.querySelector(".setup-fireball-wrap");
   var setupFireball = setupFireballWrap.querySelector(".setup-fireball");
-  setupFireball.addEventListener("click", function() {
-    setupFireballWrap.querySelector(
-      "input"
-    ).value = setupFireballWrap.style.background = window.random.getRandom(
+  setupFireball.addEventListener("click", function () {
+    setupFireballWrap.style.background = window.random.getRandom(
       fireball
     );
   });

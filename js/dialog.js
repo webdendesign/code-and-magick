@@ -1,39 +1,39 @@
-"use strict";
+'use strict';
 
-(function() {
-  var setup = document.querySelector(".setup");
-  var setupOpen = document.querySelector(".setup-open");
-  var setupClose = setup.querySelector(".setup-close");
+(function () {
+  var setup = document.querySelector('.setup');
+  var setupOpen = document.querySelector('.setup-open');
+  var setupClose = setup.querySelector('.setup-close');
 
-  var onPopupEscPress = function(evt) {
+  var onPopupEscPress = function (evt) {
     window.util.isEscEvent(evt, closePopup);
   };
 
-  var openPopup = function() {
-    setup.classList.remove("hidden");
+  var openPopup = function () {
+    setup.classList.remove('hidden');
 
-    document.addEventListener("keydown", onPopupEscPress);
+    document.addEventListener('keydown', onPopupEscPress);
   };
 
-  var closePopup = function() {
-    setup.classList.add("hidden");
+  var closePopup = function () {
+    setup.classList.add('hidden');
 
-    document.removeEventListener("keydown", onPopupEscPress);
+    document.removeEventListener('keydown', onPopupEscPress);
   };
 
-  setupOpen.addEventListener("click", function(evt) {
+  setupOpen.addEventListener('click', function () {
     openPopup();
   });
 
-  setupOpen.addEventListener("keydown", function(evt) {
+  setupOpen.addEventListener('keydown', function (evt) {
     window.util.isEnterEvent(evt, openPopup);
   });
 
-  setupClose.addEventListener("click", function() {
+  setupClose.addEventListener('click', function () {
     closePopup();
   });
 
-  setupClose.addEventListener("keydown", function(evt) {
+  setupClose.addEventListener('keydown', function (evt) {
     window.util.isEnterEvent(evt, closePopup);
   });
 })();
