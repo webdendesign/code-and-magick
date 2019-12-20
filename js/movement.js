@@ -1,11 +1,11 @@
-"use strict";
+'use strict';
 
-(function() {
-  var setup = document.querySelector(".setup");
+(function () {
+  var setup = document.querySelector('.setup');
 
-  var dialogHandler = setup.querySelector(".setup-user-pic");
+  var dialogHandler = setup.querySelector('.setup-user-pic');
 
-  dialogHandler.addEventListener("mousedown", function(evt) {
+  dialogHandler.addEventListener('mousedown', function (evt) {
     evt.preventDefault();
 
     var startCoords = {
@@ -15,7 +15,7 @@
 
     var dragged = false;
 
-    var onMouseMove = function(moveEvt) {
+    var onMouseMove = function (moveEvt) {
       moveEvt.preventDefault();
 
       dragged = true;
@@ -30,26 +30,26 @@
         y: moveEvt.clientY
       };
 
-      setup.style.top = setup.offsetTop - shift.y + "px";
-      setup.style.left = setup.offsetLeft - shift.x + "px";
+      setup.style.top = setup.offsetTop - shift.y + 'px';
+      setup.style.left = setup.offsetLeft - shift.x + 'px';
     };
 
-    var onMouseUp = function(upEvt) {
+    var onMouseUp = function (upEvt) {
       upEvt.preventDefault();
 
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseup", onMouseUp);
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
 
       if (dragged) {
-        var onClickPreventDefault = function(evt) {
+        var onClickPreventDefault = function () {
           evt.preventDefault();
-          dialogHandler.removeEventListener("click", onClickPreventDefault);
+          dialogHandler.removeEventListener('click', onClickPreventDefault);
         };
-        dialogHandler.addEventListener("click", onClickPreventDefault);
+        dialogHandler.addEventListener('click', onClickPreventDefault);
       }
     };
 
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseup", onMouseUp);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
   });
 })();

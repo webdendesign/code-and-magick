@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
-(function() {
+(function () {
   window.random = {
-    getRandom: function(value) {
+    getRandom: function (value) {
       return value[Math.floor(Math.random() * value.length)];
     }
   };

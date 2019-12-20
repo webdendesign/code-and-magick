@@ -1,36 +1,56 @@
-"use strict";
+'use strict';
 
 (function () {
-  var setup = document.querySelector(".setup");
+  var setup = document.querySelector('.setup');
 
-  var setupSimilar = setup.querySelector(".setup-similar");
+  var setupSimilar = setup.querySelector('.setup-similar');
 
-  setupSimilar.classList.remove("hidden");
+  setupSimilar.classList.remove('hidden');
 
-  var setupSimilarList = setup.querySelector(".setup-similar-list");
+  var setupSimilarList = setup.querySelector('.setup-similar-list');
 
   var template = document
-    .querySelector("#similar-wizard-template")
-    .content.querySelector(".setup-similar-item");
+    .querySelector('#similar-wizard-template')
+    .content.querySelector('.setup-similar-item');
 
   var renderWizard = function (wizard) {
     var wizardElement = template.cloneNode(true);
 
-    wizardElement.querySelector(".setup-similar-label").textContent =
-      window.wizards[i].name;
-    wizardElement.querySelector(".wizard-coat").style.fill =
-      window.wizards[i].coatColor;
-    wizardElement.querySelector(".wizard-eyes").style.fill =
-      window.wizards[i].eyesColor;
+    wizardElement.querySelector('.setup-similar-label').textContent =
+      wizard.name;
+    wizardElement.querySelector('.wizard-coat').style.fill =
+      wizard.colorCoat;
+    wizardElement.querySelector('.wizard-eyes').style.fill =
+      wizard.colorEyes;
 
     return wizardElement;
   };
 
-  var fragment = document.createDocumentFragment();
+  var successHandler = function (wizards) {
 
-  for (var i = 0; i < window.wizards.length; i++) {
-    fragment.appendChild(renderWizard(window.wizards[i]));
-  }
+    var fragment = document.createDocumentFragment();
 
-  setupSimilarList.appendChild(fragment);
+    for (var i = 0; i < 4; i++) {
+      fragment.appendChild(renderWizard(wizards[i]));
+    }
+
+    setupSimilarList.appendChild(fragment);
+
+    setupSimilar.classList.remove('hidden');
+  };
+
+  var errorHandler = function (errorMessage) {
+    var node = document.createElement('div');
+    node.style = 'z-index: 100; margin: 0 auto; text-align: center; background-color: red;';
+    node.style.position = 'absolute';
+    node.style.left = 0;
+    node.style.right = 0;
+    node.style.fontSize = '30px';
+
+    node.textContent = errorMessage;
+    document.body.insertAdjacentElement('afterbegin', node);
+  };
+
+  window.load(successHandler, errorHandler);
+
 })();
