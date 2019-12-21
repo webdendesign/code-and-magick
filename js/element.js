@@ -30,7 +30,7 @@
 
     var fragment = document.createDocumentFragment();
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 8; i < 12; i++) {
       fragment.appendChild(renderWizard(wizards[i]));
     }
 
@@ -51,6 +51,6 @@
     document.body.insertAdjacentElement('afterbegin', node);
   };
 
-  window.load(successHandler, errorHandler);
+  window.backand.load(successHandler, errorHandler);
 
 })();
