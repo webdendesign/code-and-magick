@@ -24,25 +24,25 @@
 
   // var input = setupWizardAppearance.querySelectorAll('input');
 
-  var wizardCoat = setupWizard.querySelector('.wizard-coat');
-  wizardCoat.addEventListener('click', function () {
-    wizardCoat.style.fill = window.random.getRandom(coatColor);
-  });
+  // var wizardCoat = setupWizard.querySelector('.wizard-coat');
+  // wizardCoat.addEventListener('click', function () {
+  //   wizardCoat.style.fill = window.random.getRandom(coatColor);
+  // });
 
   // Изменение цвета глаз персонажа по нажатию
 
-  var wizardEyes = setupWizard.querySelector('.wizard-eyes');
-  wizardEyes.addEventListener('click', function () {
-    wizardEyes.style.fill = window.random.getRandom(eyesColor);
-  });
+  // var wizardEyes = setupWizard.querySelector('.wizard-eyes');
+  // wizardEyes.addEventListener('click', function () {
+  //   wizardEyes.style.fill = window.random.getRandom(eyesColor);
+  // });
 
   // Изменение цвета фаерболов по нажатию
 
-  var setupFireballWrap = setup.querySelector('.setup-fireball-wrap');
-  var setupFireball = setupFireballWrap.querySelector('.setup-fireball');
-  setupFireball.addEventListener('click', function () {
-    setupFireballWrap.style.background = window.random.getRandom(fireball);
-  });
+  // var setupFireballWrap = setup.querySelector('.setup-fireball-wrap');
+  // var setupFireball = setupFireballWrap.querySelector('.setup-fireball');
+  // setupFireball.addEventListener('click', function () {
+  //   setupFireballWrap.style.background = window.random.getRandom(fireball);
+  // });
 
   var form = setup.querySelector('.setup-wizard-form');
 
